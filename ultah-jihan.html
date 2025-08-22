@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Ultah Jihan</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f9c5d1, #fbc2eb);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: #ff6f91;
+      color: white;
+      padding: 30px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .content {
+      padding: 30px 20px;
+    }
+    .card {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateX(-100%);
+      animation: slideIn 1s ease-out forwards;
+    }
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .card h2 {
+      color: #ff6f91;
+    }
+    .card p {
+      font-size: 1.1em;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #ff6f91;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: #ff3f6c;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: #ff6f91;
+      color: white;
+      border-radius: 30px 30px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik otomatis diputar -->
+  <audio id="bg-music" autoplay loop>
+    <source src="ultah.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <h1>🎉 Undangan Ulang Tahun Jihan Nur Agita 🎂</h1>
+  </header>
+
+  <div class="content">
+    <div class="card">
+      <h2>Halo Teman-teman!</h2>
+      <p>Aku mengundang kalian nih, untuk datang merayakan acara ulang tahunku yang ke-3 🥳</p>
+      <p>📅 Tanggal: <b>Sabtu, 27 September 2025</b></p>
+      <p>⏰ Waktu: <b>10.00 WIB</b></p>
+      <p>📍 Lokasi: <b>Rumah Jihan, Jl. Pulo Jaya, No 13, RT 005, RW 012, Beji, Depok</b></p>
+      <a href="https://maps.app.goo.gl/E39ybLp3uwSw7qQz5?g_st=aw" target="_blank" class="button">Lihat Lokasi</a>
+    </div>
+  </div>
+
+  <footer>
+    Ditunggu kehadirannya ya! 🎈🎁
+  </footer>
+
+  <script>
+  window.addEventListener("DOMContentLoaded", function() {
+    const music = document.getElementById("bg-music");
+    // cek apakah dari tombol "Buka Undangan"
+    if (localStorage.getItem("playMusic") === "yes") {
+      music.play().catch(err => {
+        console.log("Autoplay dicegah browser:", err);
+      });
+      localStorage.removeItem("playMusic"); // reset biar tidak play otomatis
+    }
+  });
+</script>
+
+</body>
+</html>

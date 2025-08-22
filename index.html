@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buka Undanganku</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      color: white;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      background: #ff6f91;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff3f6c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Selamat Datang Teman-Teman 🎉</h1>
+    <p>Silakan klik tombol di bawah untuk membuka undangan</p>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
+  </div>
+
+  <script>
+    function bukaUndangan() {
+    localStorage.setItem("playMusic", "yes");
+    window.location.href = "ultah-jihan.html"; 
+  }
+
+  </script>
+</body>
+</html>
